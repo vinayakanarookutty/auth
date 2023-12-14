@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back!</title>
+    <link rel="stylesheet" href="style.css" type="css">
+</head>
+<body>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 400px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.login-card {
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input-field input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.or-container {
+    margin: 20px 0;
+}
+
+.or-container span {
+    font-size: 14px;
+    color: #666;
+}
+
+.signup-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+} 
+    </style>
+ 
+    
+    <div class="container">
+        <div class="login-card">
+            <% if (status=="Password is Wrong") { %>
+                <p style="color: red;"><%= status %></p>
+            <% } %>
+            <% if (status=="UserName is Wrong") { %>
+                <p style="color: red;"><%= status %></p>
+            <% } %>
+            <h2>Welcome Back!</h2>
+            <form action="/login" method="post">
+                <div class="input-field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address">
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <button type="submit">Log In</button>
+            </form>
+            <div class="or-container">
+                <span>OR</span>
+            </div>
+            <a href="/signup" class="signup-link">Don't have an account? Sign Up!</a>
+        </div>
+    </div>
+</body>
+</html>

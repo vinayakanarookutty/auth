@@ -67,7 +67,12 @@ router.post("/student", async (req, res) => {
     studentName: req.body.studentName,
   });
   student.save();
-  res.redirect("/");
+  res.redirect("/attendance");
+});
+
+router.get("/attendance", async (req, res) => {
+  var students = await StudentModel.find({});
+  res.render("Attendence", { students });
 });
 
 router.post("/create-user", async (req, res) => {

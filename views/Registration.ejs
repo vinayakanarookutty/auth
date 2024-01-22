@@ -14,12 +14,14 @@
             background-color: #f5f5f5;
             display: flex;
             justify-content: center;
+            
             align-items: center;
             min-height: 100vh;
+         
         }
 
         .container {
-            width: 100%;
+       
             display: flex;
             justify-content: center;
             align-items: center;
@@ -80,10 +82,10 @@
     <div class="container">
         <div class="registration-card">
             <h2>Create an Account</h2>
-            <form action="/register" method="post">
+            <form action="/create-user" method="post">
                 <div class="input-field">
-                    <label for="university">University</label>
-                    <input type="text" id="university" name="university" placeholder="Enter your university">
+                    <label for="universityName">University</label>
+                    <input type="text" id="universityName" name="universityName" placeholder="Enter your university">
                 </div>
                 <div class="input-field">
                     <label for="college">College</label>
@@ -110,8 +112,8 @@
                     <input type="text" id="semester" name="semester" placeholder="Enter your semester">
                 </div>
                 <div class="input-field">
-                    <label for="faculty name">Faculty Name</label>
-                    <input type="text" id="faculty_name" name="faculty_name" placeholder="Enter the faculty name">
+                    <label for="facultyName">Faculty Name</label>
+                    <input type="text" id="facultyName" name="facultyName" placeholder="Enter the faculty name">
                 </div>
                 <div class="input-field">
                     <label for="email">Email ID</label>
@@ -119,7 +121,7 @@
                 </div>
                 <div class="input-field">
                     <label for="password">Password</label>
-                    <input type="password" id="pass" name="pass" placeholder="Enter your password">
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
                 </div>
                 <button type="submit">Register</button>
             </form>

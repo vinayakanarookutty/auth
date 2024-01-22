@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
   res.render("LoginPage", { status: "ok" });
 });
 router.get("/signup", (req, res) => {
-  res.render("CreateUser");
+  res.render("Registration");
 });
 router.get("/home", (req, res) => {
   res.render("Home");
@@ -46,8 +46,7 @@ router.post("/login", async (req, res) => {
 router.post("/create-user", async (req, res) => {
   var password = await bcrypt.hash(req.body.password, 10);
   var user = new UserModal({
-    universityName: req.body.universityName,
-    userName: req.body.userName,
+    userName: "Vinayak",
     lastName: req.body.lastname,
     email: req.body.email,
     password: password,

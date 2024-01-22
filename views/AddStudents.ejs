@@ -49,10 +49,32 @@
             width: 100%;
         }
     </style>
+  
 </head>
 <body>
+    <script>
+        function Submit() {
+            // Get the form element
+            var form = document.querySelector('form');
+
+            // Create a new input element
+            var extraInput = document.createElement("input");
+
+            // Set the attributes for the new input
+            extraInput.type = "text"; // You can change this to "hidden" or other types if needed
+            extraInput.name = "facultyName"; // Change to the desired name
+            extraInput.value = "<%=facultyName%>"; // Change to the desired value
+
+            // Append the new input to the form
+            form.appendChild(extraInput);
+
+            // Submit the form
+            form.submit();
+        }
+    </script>
     <form action="/student" method="POST">
         <div>
+            <p>Faculty Name: <%= facultyName %></p>
             <label for="regnum">Register Number</label>
             <input type="text" id="regNumber" name="registerNumber" required>
         </div>
@@ -64,7 +86,7 @@
             <label for="studentName">Student Name</label> 
             <input type="text" id="studentName" name="studentName" required>
         </div>
-        <button type="submit">Create New Student</button>
+        <button type="button" onclick="Submit()">Create New Student</button>
     </form>
 </body>
 </html>

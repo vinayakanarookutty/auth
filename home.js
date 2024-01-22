@@ -16,6 +16,7 @@ var userSchema = mongoose.Schema({
   password: String,
 });
 var studentSchema = mongoose.Schema({
+  facultyName:String,
   registerNumber: String,
   rollNumber: String,
   studentName: String,
@@ -58,14 +59,18 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/student", async (req, res) => {
-  res.render("AddStudents");
+  const facultyName = req.query.facultyName;
+  console.log(facultyName)
+  res.render("AddStudents",{facultyName});
 });
 router.post("/student", async (req, res) => {
   var student = new StudentModel({
+    facultyName:req.body.facultyName,
     registerNumber: req.body.registerNumber,
     rollNumber: req.body.rollNumber,
     studentName: req.body.studentName,
   });
+  console.log(req.body)
   student.save();
   res.redirect("/attendance");
 });

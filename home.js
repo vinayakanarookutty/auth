@@ -22,14 +22,21 @@ var studentSchema = mongoose.Schema({
 });
 var UserModal = mongoose.model("user", userSchema);
 var StudentModel = mongoose.model("students", studentSchema);
+
+
 router.get("/", (req, res) => {
   res.render("LoginPage", { status: "ok" });
 });
 router.get("/signup", (req, res) => {
   res.render("Registration");
 });
-router.get("/home", (req, res) => {
-  res.render("Home");
+router.get("/home", async (req, res) => {
+  const userEmailFromQuery = req.query.email;
+  console.log(userEmailFromQuery)
+  var user = await UserModal.findOne({ email: userEmailFromQuery });
+  // Set user details in local storage
+  res.render("Home", { user: user });
+  
 });
 
 router.post("/login", async (req, res) => {
@@ -39,7 +46,8 @@ router.post("/login", async (req, res) => {
   if (user) {
     bcrypt.compare(req.body.password, user.password).then((response) => {
       if (response) {
-        res.render("Home", { user });
+       email=user.email
+       res.redirect(`/home?email=${user.email}`);
       } else {
         res.render("LoginPage", { status: "Password is Wrong" });
       }

@@ -1,0 +1,132 @@
+<!-- registration.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .registration-card {
+            width: 400px;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            margin-bottom: 20px;
+        }
+
+        .input-field label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .input-field input {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745; /* Green color for the submit button */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .login-link {
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            text-decoration: none;
+            color: #007bff; /* Blue color for the login link */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="registration-card">
+            <h2>Create an Account</h2>
+            <form action="/register" method="post">
+                <div class="input-field">
+                    <label for="university">University</label>
+                    <input type="text" id="university" name="university" placeholder="Enter your university">
+                </div>
+                <div class="input-field">
+                    <label for="college">College</label>
+                    <input type="text" id="college" name="college" placeholder="Enter your college">
+                </div>
+                <div class="input-field">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" placeholder="Enter your department">
+                </div>
+                <div class="input-field">
+                    <label for="programme">Programme/Course</label>
+                    <input type="text" id="programme" name="programme" placeholder="Enter your program/course">
+                </div>
+                <div class="input-field">
+                    <label for="specialization">Specialization</label>
+                    <input type="text" id="specialization" name="specialization" placeholder="Enter your specialization">
+                </div>
+                <div class="input-field">
+                    <label for="scheme">Scheme (Year)</label>
+                    <input type="text" id="scheme" name="scheme" placeholder="Enter your scheme (year)">
+                </div>
+                <div class="input-field">
+                    <label for="semester">Semester</label>
+                    <input type="text" id="semester" name="semester" placeholder="Enter your semester">
+                </div>
+                <div class="input-field">
+                    <label for="faculty name">Faculty Name</label>
+                    <input type="text" id="faculty_name" name="faculty_name" placeholder="Enter the faculty name">
+                </div>
+                <div class="input-field">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email id">
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="pass" name="pass" placeholder="Enter your password">
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <div class="login-link">
+                <span>Already have an account? <a href="/login">Log in</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

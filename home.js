@@ -15,7 +15,7 @@ router.get("/",(req,res)=>{
   res.render('LoginPage',{status:"ok"})
 })
 router.get("/signup",(req,res)=>{
-    res.render('CreateUser')
+    res.render('Registration')
   })
   router.get("/home",(req,res)=>{
     res.render('Home')

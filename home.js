@@ -54,4 +54,5 @@ router.post("/create-user", async (req, res) => {
   user.save();
   res.redirect("/");
 });
+
 module.exports = router;

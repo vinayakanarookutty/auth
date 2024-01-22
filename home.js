@@ -47,7 +47,6 @@ router.post("/create-user", async (req, res) => {
   var password = await bcrypt.hash(req.body.password, 10);
   var user = new UserModal({
     universityName: req.body.universityName,
-
     userName: req.body.userName,
     lastName: req.body.lastname,
     email: req.body.email,

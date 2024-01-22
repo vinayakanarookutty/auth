@@ -2,7 +2,7 @@ var express=require('express')
 var router=express.Router()
 var mongoose=require('mongoose')
 var bcrypt=require('bcrypt')
-mongoose.connect("mongodb://localhost:27017/sample4")
+mongoose.connect("mongodb://localhost:27017/Attendance")
 var userSchema=mongoose.Schema({
     userName:String,
     lastName:String,

@@ -14,7 +14,7 @@
             background-color: #f5f5f5;
             display: flex;
             justify-content: center;
-            
+            gap: 1rem;
             align-items: center;
             min-height: 100vh;
          
@@ -25,6 +25,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
         }
 
         .registration-card {
@@ -38,24 +39,36 @@
 
         h2 {
             font-size: 24px;
-            margin-bottom: 20px;
+            
         }
 
         .input-field {
-            margin-bottom: 20px;
+       
+            display: flex;
+            gap: 2rem;
+         
         }
 
         .input-field label {
             display: block;
             font-size: 16px;
-            margin-bottom: 5px;
+            padding-top: 30px;
+            padding-left: 10%;
+         
         }
 
         .input-field input {
             padding: 10px;
-            width: 100%;
+           margin-top: 5%;
+            width: 200px;
             border: 1px solid #ddd;
             border-radius: 3px;
+        }
+        #id{
+            margin-left: 13.5%;
+        }
+        #email{
+            margin-left: 2.5%;
         }
 
         button[type="submit"] {
@@ -64,6 +77,7 @@
             padding: 10px 15px;
             border: none;
             border-radius: 3px;
+            margin-top: 5%;
             cursor: pointer;
         }
 
@@ -83,37 +97,10 @@
         <div class="registration-card">
             <h2>Create an Account</h2>
             <form action="/create-user" method="post">
+               
                 <div class="input-field">
-                    <label for="universityName">University</label>
-                    <input type="text" id="universityName" name="universityName" placeholder="Enter your university">
-                </div>
-                <div class="input-field">
-                    <label for="college">College</label>
-                    <input type="text" id="college" name="college" placeholder="Enter your college">
-                </div>
-                <div class="input-field">
-                    <label for="department">Department</label>
-                    <input type="text" id="department" name="department" placeholder="Enter your department">
-                </div>
-                <div class="input-field">
-                    <label for="programme">Programme/Course</label>
-                    <input type="text" id="programme" name="programme" placeholder="Enter your program/course">
-                </div>
-                <div class="input-field">
-                    <label for="specialization">Specialization</label>
-                    <input type="text" id="specialization" name="specialization" placeholder="Enter your specialization">
-                </div>
-                <div class="input-field">
-                    <label for="scheme">Scheme (Year)</label>
-                    <input type="text" id="scheme" name="scheme" placeholder="Enter your scheme (year)">
-                </div>
-                <div class="input-field">
-                    <label for="semester">Semester</label>
-                    <input type="text" id="semester" name="semester" placeholder="Enter your semester">
-                </div>
-                <div class="input-field">
-                    <label for="facultyName">Faculty Name</label>
-                    <input type="text" id="facultyName" name="facultyName" placeholder="Enter the faculty name">
+                    <label for="id">ID</label>
+                    <input type="text" id="id" name="id" placeholder="Enter your id">
                 </div>
                 <div class="input-field">
                     <label for="email">Email ID</label>

@@ -4,16 +4,9 @@ var mongoose = require("mongoose");
 var bcrypt = require("bcrypt");
 mongoose.connect("mongodb://localhost:27017/attendance");
 var userSchema = mongoose.Schema({
-  universityName: String,
-  college: String,
-  department: String,
-  programme: String,
-  specialization: String,
-  scheme: String,
-  semester: String,
-  facultyName: String,
-  email: String,
-  password: String,
+  id:String,
+  email:String,
+  password:String
 });
 var studentSchema = mongoose.Schema({
   facultyName:String,
@@ -85,16 +78,9 @@ router.post("/create-user", async (req, res) => {
     console.log(req.body)
     var password = await bcrypt.hash(req.body.password, 10);
     var user = new UserModal({
-      universityName: req.body.universityName,
-      college: req.body.college,
-      department: req.body.department,
-      programme: req.body.programme,
-      specialization: req.body.specialization,
-      scheme: req.body.scheme,
-      semester: req.body.semester,
-      facultyName: req.body.facultyName,
-      email: req.body.email,
-      password: password,
+     id:req.body.id,
+     email:req.body.email,
+     password:req.body.password
     });
 
     // Save the user and wait for the operation to complete
